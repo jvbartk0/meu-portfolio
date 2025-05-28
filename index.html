@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bartk0 - Portfólio</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <main>
+    <header>
+        <div class="nome1">
+            <p>
+                <span style="color:#ff77cc;">const</span>
+                <span style="color:#66ff66;">dev</span>
+                <span style="color:#ffffff;"> = </span>
+                <span style="color:#ffff99;">"BARTKO"</span><span style="color:#ffffff;">;</span>
+            </p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Projetos</a></li>
+                <li><a href="#">Sobre Mim</a></li>
+                <li><a href="#">Links</a></li>
+            </ul>
+    </header>
+
+<div class="title">
+  <p class="title-text">
+    Desenvolvedor em formação<br>
+    <span id="typed-word" class="typing-text"></span><span class="cursor">|</span>
+  </p>
+  <button class="ver-mais">Explorar o portfólio<i class="fa-solid fa-angle-down"></i></button>
+</div>
+
+
+
+
+    <div class="content"></div>
+    </main>
+    
+
+
+    <script>
+  const palavras = [
+    "Front-end | Crescimento constante",
+    "HTML & CSS | JavaScript",
+    "Web responsiva",
+  ];
+
+  const el = document.getElementById("typed-word");
+  let palavraIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function type() {
+    const palavraAtual = palavras[palavraIndex];
+
+    if (isDeleting) {
+      charIndex--;
+      el.textContent = palavraAtual.substring(0, charIndex);
+    } else {
+      charIndex++;
+      el.textContent = palavraAtual.substring(0, charIndex);
+    }
+
+    let delay = isDeleting ? 40 : 80;
+
+    if (!isDeleting && charIndex === palavraAtual.length) {
+      delay = 1500;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      palavraIndex = (palavraIndex + 1) % palavras.length;
+      delay = 500;
+    }
+
+    setTimeout(type, delay);
+  }
+
+  type();
+</script>
+
+
+</body>
+
+</html>

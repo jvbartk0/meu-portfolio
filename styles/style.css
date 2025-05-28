@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #050211;
+}
+
+header {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    width: 100%;
+    height: 110px;
+    align-items: center;
+    padding: 0 20px;
+
+    position: fixed;
+
+
+}
+
+.nome1 {
+    width: 50%;
+    padding: 20px;
+}
+
+.nome1 p {
+    font-size: 33px;
+    font-weight: 700;
+}
+
+
+nav {
+    background-color: transparent;
+    padding: 20px 40px;
+    width: 50%;
+    justify-content: end;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    filter: blur(10);
+
+}
+
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    transition-duration: 0.4s;
+    display: block;
+    position: relative;
+    padding: 0 8px;
+}
+
+ul:hover li a {
+    opacity: .3;
+
+}
+
+ul li a:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    color:#050211
+}
+
+ul li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f1fa8c;
+    z-index: -1;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: .2s;
+    
+}
+
+ul li a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform .2s;
+    
+}
+
+.title {
+    background: linear-gradient(to left, #050211, #1a082d, #2d0b23, #0b1a2e,
+            #160826, #0c0f2c, #1f0d17, #1e1b2e);
+    background-size: 500% 100%;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: degrade-animado 10s infinite alternate;
+
+}
+
+@keyframes degrade-animado {
+    0% {
+        background-position-x: 0%;
+    }
+
+    100% {
+        background-position-x: 100%;
+    }
+}
+
+
+
+
+.title-text {
+    color: white;
+    font-size: 55px;
+    margin-bottom: 50px;
+
+}
+
+.content {
+    height: 10000px;
+}
+
+.typing-text {
+  font-weight: 700;
+  color: #f1fa8c; 
+  white-space: nowrap;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 0.8s infinite;
+  color: #f8f8f2; 
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.ver-mais{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 100px;
+    color: white;
+    font-weight: 400;
+    padding: 10px;
+    height: auto;
+    width: 300px;
+    font-size: 23px;
+    transition: 0.2s;
+}
+
+.ver-mais i{
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.ver-mais:hover{
+    background-color: rgb(255, 255, 255, 0.1);
+    transform: scaleX(1.03);
+}
+
+
+
+
